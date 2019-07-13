@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "style.css">
+    <meta charset="UTF-8">
+    <title>Flaschenrechner</title>
+
+</head>
+<body>
+
+<h1> Flaschenrechner </h1>
+<p>Berechne den Verkaufpreise von so viel leckerem* 
+        <a href="http://www.ostarrichi.org/wort-2520-Gschlader-verdunntes_schales_geschmackloses_Getrank_oder_S.html">Gschlader</a>
+(oder so) wie du willst!</p>
+
+    <p>
+    Einkaufspreis in Euro (ohne Pfand für alle Flaschen)<br>
+    <input type="real" id="Einkaufspreis" value="1" style="font-family: ComicTans;" font-size="20px;">
+    </p>
+    <p>
+    Mehrwertsteuer in %<br>
+    <input type="real" id="Mehrwertsteuer" value="19" style="font-family: ComicTans;" font-size="20px;">
+    </p>
+    <p>
+    Pfand in Euro (pro Flasche)<br>
+    <input type="real" id="Pfand" value="0.25" style="font-family: ComicTans;" font-size="20px;">
+    </p>
+    <p>
+    Anzahl Flaschen<br>
+    <input type="number" id="Flaschen" value="1" style="font-family: ComicTans;" font-size="20px;"> 
+    </p>
+    <p>
+    gewünschter Gewinn in Euro (pro Flasche)<br>
+    <input type="real" id="Gewinn" value="0.5" style="font-family: ComicTans;" font-size="20px;"> 
+    </p>
+    
+    <button onclick="rechnesklave()" style="font-family: ComicTans;" font-size="20px;">Jeder muss ab und an mal gedrückt werden.</button>
+    <br><br>
+
+    <table id="witzigername">
+        <tr>
+            <td>
+                Min. Verkaufspreis ohne Verlust
+            </td>
+            <td>
+                Verkaufspreis mit gewünschtem Gewinn
+            </td>
+            <td>
+                Preis ohne Pfand mit Gewinn
+            </td>
+            <td>
+                Pfand pro Flasche
+            </td>
+            <td>
+                Gewinn pro Flasche
+            </td>
+        </tr>
+    </table>
+
+<script type="text/javascript">
+    function rechnesklave() {
+
+    var einkauf = document.getElementById("Einkaufspreis").value;
+    var mws = document.getElementById("Mehrwertsteuer").value;
+    var pfand = document.getElementById("Pfand").value;
+    var boddls = document.getElementById("Flaschen").value;
+    var win = document.getElementById("Gewinn").value;
+
+    var boddlpreis = Number(einkauf)/Number(boddls);
+    var preis =  Number(boddlpreis) + Number(pfand) + ((Number(mws)/100) * Number(boddlpreis));
+
+    var table = document.getElementById("witzigername");
+    var row = table.insertRow(1);
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
+    var cell3 = row.insertCell(3);
+    var cell4 = row.insertCell(4);
+
+    cell0.innerHTML = preis.toFixed(2);         // Verkaufspreis ohne Gewinn
+    cell1.innerHTML = (preis + Number(win)).toFixed(2);         // Verkaufspreis mit Gewinn
+    cell2.innerHTML = (Number(preis) - Number(pfand) + Number(win)).toFixed(2);      // Preis ohne Pfand
+    cell3.innerHTML = pfand;        // Pfand
+    cell4.innerHTML = win;        // Pfand
+
+    if (boddls == 0)
+    {
+        cell0.innerHTML = pfand;         // Verkaufspreis ohne Gewinn
+        cell1.innerHTML = Number(win)+Number(pfand);         // Verkaufspreis mit Gewinn
+        cell2.innerHTML = win;      // Preis ohne Pfand
+    }
+
+    var pfandberg = pfand * boddls;
+    if (pfandberg < 10000)
+    {
+    document.getElementById("acc").innerHTML = "Janeks Pfandberg bringt ihm  " + pfandberg + "  Euro ein.";
+    }
+    else
+    {
+    document.getElementById("acc").innerHTML = "Du hast nicht so viel Pfand. Geh' nach Hause und überdenke deine Entscheidungen.";   
+    }
+    }
+</script>
+
+<p>*optional</p>
+<p id="acc"></p>
+
+<img src="gif.gif" id="pigdure">
+
+</body>
+</html> 

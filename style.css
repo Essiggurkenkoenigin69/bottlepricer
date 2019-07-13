@@ -1,0 +1,46 @@
+@font-face { 
+    font-family: "ComicTans"; 
+    src: url("ComicTans.ttf"); 
+    }
+
+body 
+{
+      font-family: ComicTans;
+      background-color: #FFBFDA;
+      font-size: 20px;
+}
+
+h1 
+{ 
+    color:darkmagenta;
+    font-family: ComicTans;
+}
+
+p 
+{
+    color: purple;
+}
+
+#witzigername, tr, td
+{
+    color: darkred;
+    background-color: limegreen;
+    text-align: center;
+    border: 1px solid darkred;
+}
+
+img
+{
+    position: absolute;
+    left: 55%;
+    top: 20%;
+    width: 30%;
+}
+
+label
+{
+    position: absolute;
+    left: 60%;
+    top: 70%;
+    width: 30%;
+}
