@@ -44,11 +44,3 @@ label
     top: 70%;
     width: 30%;
 }
-
-table
-        {
-            vertical-align: middle;
-            border: solid black 2px;
-            width: 100%;
-            height: 100%;
-        }
