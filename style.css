@@ -1,11 +1,11 @@
 @font-face { 
-    font-family: "ComicTans"; 
-    src: url("ComicTans.ttf"); 
+    font-family: "FolioBoldCondensed"; 
+    src: url("ufonts.com_folio-bold-condensed.ttf"); 
     }
 
 body 
 {
-      font-family: ComicTans;
+      font-family: FolioBoldCondensed;
       background-color: #FFBFDA;
       font-size: 20px;
 }
