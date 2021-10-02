@@ -12,8 +12,8 @@ body
 
 h1 
 { 
-    color:darkmagenta;
-    font-family: ComicTans;
+    color: #B91023;
+    font-family: FolioBoldCondensed;
 }
 
 p 
@@ -23,10 +23,10 @@ p
 
 #witzigername, tr, td
 {
-    color: darkred;
+    color: #B91023;
     background-color: limegreen;
     text-align: center;
-    border: 1px solid darkred;
+    border: 1px solid #B91023;
 }
 
 img
