@@ -21,7 +21,7 @@ p
     color: purple;
 }
 
-#witzigername, tr, td
+#witzigername, #tr, #td
 {
     color: #B91023;
     background-color: limegreen;
